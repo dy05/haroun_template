@@ -5,36 +5,515 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/app.css">
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <div class="bg-info py-2">
-            <div class="container">
-                Header top
-            </div>
+    <header class="overflow-hidden">
+        <div class="h-110 d-none pt-1 d-sm-block" style="background: url('assets/bg.jpg');">
+            <p class="text-center px-2 pt-1 pb-2 align-items-md-center fz-14 fw-500 text-white d-m-flex">
+                Depuis 2007,
+                <a href="#" class="text-orange mr-1" title="Lire les témoignages">
+                    plus de 90% de clients satisfaits
+                </a>
+                | Remboursement sans frais sous 48H si annulation | De vrais pros super Pros
+                <a class="btn btn-orange rounded-pill ml-2 mt-n1/2 py-0" href="#">
+                    Professionnel ?
+                </a>
+            </p>
         </div>
-        <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark bg-primary">
+<!--
+        <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <div class="d-flex align-self-end align-items-center align-items-md-end navbar-collapse" id="navbarNav">
+                    <div class="navbar-item d-inline-block d-sm-none">
+                        <button id="toggle_menu_gamme" class="navbar-link">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </div>
+
+                    <a class="navbar-brand" href="#" title="MeilleurArtisan.com">
+                        <img src="assets/logo.png" class="wm-16" alt="Trouver mon artisan">
+                    </a>
+                    <div class="navbar-nav mr-auto d-flex flex-row align-items-center">
+                        <div class="nav-item" id="navSearchIcon">
+                            <i data-toggle="search" class="icon-search"></i>
+                            <form id="navsearch" class="form-inline">
+                                <input placeholder=" Quels travaux voulez-vous faire ?" type="search" id="autcomplete_algolia" class="input-rounded search searchField form-control" value="">
+                            </form>
+                        </div>
+                        <div class="nav-item">
+                            <a title="Contactez MeilleurArtisan.com" href="#" class="nav-link align-self-end menu_contact_marketplace d-none d-md-inline">
+                                <i class="fa fa fa-phone" aria-hidden="true"></i>
+                                <span>04 86 68 81 31</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="navbar-nav">
+                        <div class="nav-item dropdown">
+                            <a title="S'identifier" class="nav-link" id="navLoginForm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="images/2018-refonte/user_login.svg" alt="Connexion"><span class="d-none d-sm-inline textesousicone"><br>Compte</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navLoginForm">
+                                <form class="px-4 py-3" action="/docs/accesprofessionnel.php?connect=IDENT" method="post">
+                                    <div class="form-group">
+                                        <label for="email">Adresse email</label>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Ex: alain.durand@gmail.com" pattern="([a-zA-Z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*)@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Mot de passe</label>
+                                        <input type="password" class="form-control" name="pass" id="password" placeholder="Mot de passe" required="">
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-orange" id="login" name="login" value="Connexion">Connexion</button>
+                                    </div>
+                                    <div class="text-center"><button class="btn btn-link" onclick="location.href='/docs/oubli-mdp.php'">Mot de passe oublié ?</button></div>
+                                </form>
+                                <div class="dropdown-divider"></div>
+                                <div class="dropdown-item">
+                                    <form action="/docs/sociallogin.php" method="get">
+                                        <input type="hidden" name="provider" value="Google">
+                                        <input type="submit" name="action" value="" class="sociallogin_google">
+                                    </form>
+                                </div>
+                                <div class="dropdown-item">
+                                    <form action="/docs/sociallogin.php" method="get">
+                                        <input type="hidden" name="provider" value="Facebook">
+                                        <input type="submit" name="action" value="" class="sociallogin_facebook">
+                                    </form>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <div class="text-center"><button class="btn btn-link" onclick="location.href='/docs/identification.php'">Créer un compte</button></div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="nav-item" id="paniermp">
+                            <a class="nav-link" title="Voir mon panier" onclick="location.href='/docs/commande-panier.php'">
+                                <img src="images/2018-refonte/panier_orange.svg" alt="Panier"><span class="d-none d-sm-inline textesousicone"><br>Panier</span>
+                            </a>
+                            <div id="nbProductCart" class="badge badge-light"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <nav id="navbar_top" class=" d-none navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
                 <a class="navbar-brand" href="#">Logo</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="main_nav">	
+                <div class="collapse navbar-collapse" id="main_nav">
                     <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="#"> Menu item </a></li>
                     </ul>
                 </div>
             </div>
         </nav>
+-->
+        <div id="menu_gamme" class="bg-orange d-none md:d-block">
+            <div class="container">
+                <div class="nav nav-pills nav-fill">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle text-white font-weight-bold py-4 fz-16 hover:bg-gray" id="Chauffagiste" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Chauffagiste</a>
+                        <div class="dropdown-menu" aria-labelledby="Chauffagiste">
+                            <a class="dropdown-item" title="Contrat d'entretien chaudière gaz" href="#">Contrat d'entretien chaudière gaz</a>
+
+                            <a class="dropdown-item" title="Dépannage de chauffage (1h)" href="#">Dépannage de chauffage (1h)</a>
+
+                            <a class="dropdown-item" title="Désembouage circuit de radiateurs" href="#">Désembouage circuit de radiateurs</a>
+
+                            <a class="dropdown-item" title="Désembouage de plancher chauffant" href="#">Désembouage de plancher chauffant</a>
+
+                            <a class="dropdown-item" title="Pose d'un robinet de radiateur thermostatique " href="#">Pose d'un robinet de radiateur thermostatique </a>
+
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" title="Autre Chauffagiste" href="#">Voir tout</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle text-white font-weight-bold py-4 fz-16 hover:bg-gray" id="Serrurier" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Serrurier</a>
+                        <div class="dropdown-menu" aria-labelledby="Serrurier">
+                            <a class="dropdown-item" title="Dégrippage de serrure" href="#">Dégrippage de serrure</a>
+
+                            <a class="dropdown-item" title="Dépannage de serrurerie (1h)" href="#">Dépannage de serrurerie (1h)</a>
+
+                            <a class="dropdown-item" title="Ouverture de porte " href="#">Ouverture de porte </a>
+
+                            <a class="dropdown-item" title="Pose d'un kit anti-effraction" href="#">Pose d'un kit anti-effraction</a>
+
+                            <a class="dropdown-item" title="Pose de verrou" href="#">Pose de verrou</a>
+
+                            <a class="dropdown-item" title="Remplacement de cylindre de serrure" href="#">Remplacement de cylindre de serrure</a>
+
+                            <a class="dropdown-item" title="Remplacement de serrure" href="#">Remplacement de serrure</a>
+
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" title="Autre Serrurier" href="#">Voir tout</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle text-white font-weight-bold py-4 fz-16 hover:bg-gray" id="Plombier" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Plombier</a>
+                        <div class="dropdown-menu" aria-labelledby="Plombier">
+                            <a class="dropdown-item" title="Dépannage de plomberie (1h)" href="#">Dépannage de plomberie (1h)</a>
+
+                            <a class="dropdown-item" title="Pose d'un reducteur de pression" href="#">Pose d'un reducteur de pression</a>
+
+                            <a class="dropdown-item" title="Pose de joint en silicone" href="#">Pose de joint en silicone</a>
+
+                            <a class="dropdown-item" title="Recherche de fuite non destructive" href="#">Recherche de fuite non destructive</a>
+
+                            <a class="dropdown-item" title="Remplacement d'un groupe de sécurité de chauffe-eau" href="#">Remplacement d'un groupe de sécurité de chauffe-eau</a>
+
+                            <a class="dropdown-item" title="Remplacement de ballon d'eau chaude / cumulus" href="#">Remplacement de ballon d'eau chaude / cumulus</a>
+
+                            <a class="dropdown-item" title="Remplacement de chasse d'eau WC" href="#">Remplacement de chasse d'eau WC</a>
+
+                            <a class="dropdown-item" title="Remplacement de WC" href="#">Remplacement de WC</a>
+
+                            <a class="dropdown-item" title="Remplacement robinet de gaz (ROAI)" href="#">Remplacement robinet de gaz (ROAI)</a>
+
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" title="Autre Plombier" href="#">Voir tout</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle text-white font-weight-bold py-4 fz-16 hover:bg-gray" id="Electricien" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Electricien</a>
+                        <div class="dropdown-menu" aria-labelledby="Electricien">
+                            <a class="dropdown-item" title="Dépannage électricité (1h)" href="#">Dépannage électricité (1h)</a>
+
+                            <a class="dropdown-item" title="Pose d'interrupteur différentiel 30mA" href="#">Pose d'interrupteur différentiel 30mA</a>
+
+                            <a class="dropdown-item" title="Remplacement d'interrupteur électrique" href="#">Remplacement d'interrupteur électrique</a>
+
+                            <a class="dropdown-item" title="Remplacement de contacteur jour/nuit" href="#">Remplacement de contacteur jour/nuit</a>
+
+                            <a class="dropdown-item" title="Remplacement de prise électrique" href="#">Remplacement de prise électrique</a>
+
+                            <a class="dropdown-item" title="Remplacement de tableau électrique  " href="#">Remplacement de tableau électrique  </a>
+
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" title="Autre Electricien" href="#">Voir tout</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle text-white font-weight-bold py-4 fz-16 hover:bg-gray" id="Diagnostiqueur" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Diagnostiqueur</a>
+                        <div class="dropdown-menu mt-n1/2" aria-labelledby="Diagnostiqueur">
+                            <a class="dropdown-item" title="Diagnostic Amiante / Repérage amiante" href="#">Diagnostic Amiante / Repérage amiante</a>
+
+                            <a class="dropdown-item" title="Diagnostic de Performance Énergétique (DPE)" href="#">Diagnostic de Performance Énergétique (DPE)</a>
+
+                            <a class="dropdown-item" title="Diagnostic de surface habitable (Loi Boutin)" href="#">Diagnostic de surface habitable (Loi Boutin)</a>
+
+                            <a class="dropdown-item" title="Diagnostic Electricité" href="#">Diagnostic Electricité</a>
+
+                            <a class="dropdown-item" title="Diagnostic Gaz" href="#">Diagnostic Gaz</a>
+
+                            <a class="dropdown-item" title="Diagnostic Loi Carrez " href="#">Diagnostic Loi Carrez </a>
+
+                            <a class="dropdown-item" title="Diagnostic Plomb " href="#">Diagnostic Plomb </a>
+
+                            <a class="dropdown-item" title="Diagnostic Technique Global (DTG)" href="#">Diagnostic Technique Global (DTG)</a>
+
+                            <a class="dropdown-item" title="Diagnostic Termites " href="#">Diagnostic Termites </a>
+
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" title="Autre Diagnostiqueur" href="#">Voir tout</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle text-white font-weight-bold py-4 fz-16 hover:bg-gray" id="Peintre" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Peintre</a>
+                        <div class="dropdown-menu" aria-labelledby="Peintre">
+                            <a class="dropdown-item" title="Mise en peinture d'un plafond" href="#">Mise en peinture d'un plafond</a>
+
+                            <a class="dropdown-item" title="Mise en peinture de mur d'une pièce" href="#">Mise en peinture de mur d'une pièce</a>
+
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" title="Autre Peintre" href="#">Voir tout</a>
+                        </div>
+                    </div>
+                    <div class="nav-item"><a href="#" class="nav-link text-white font-weight-bold py-4 fz-16 hover:bg-gray">Autres</a></div>
+                </div>
+            </div>
+        </div>
     </header>
     
     
+    <main>
+        <div class="container text-center mb-5 pt-4">
+            <h2 class="text-orange font-weight-bold">Nos rock stars :</h2>
+            <div class="row justify-content-center mt-4" id="listeoperation">
+                <div class="col-6 col-sm-6 col-md-3 px-0 border-right-a border-right-h33 border-right-orange">
+                    <div class="operation card border-transparent h-100 d-flex flex-column justify-content-between">
+                        <a href="#" title="Plus d'info sur Contrat d'entretien chaudière gaz" onclick="ga('send', 'event', 'listemetier', 'Voir les professionnels', 'pro', {'nonInteraction': 1});">
+                            <img class="d-block h-16 card-img-top img-fluid lazy" data-original="images/operation/operation11.svg" src="images/operation/operation11.svg" alt="Tarifs pour Contrat d'entretien chaudière gaz">
+                        </a>
+                        <h3 class="font-weight-bold fz-15">Contrat d'entretien chaudière gaz</h3>
+                        <div class="card-body text-center d-flex flex-column justify-content-end">
+                            <div class="prix-moyen">
+                                <small>à partir de</small>
+                            </div>
+                            <h4 class="card-title text-orange font-weight-bold fz-30">
+                                97<sup>€</sup>
+                                <small>TTC</small>
+                            </h4>
+                            <div class="card-description text-center mt-2">
+                                <a class="btn btn-orange rounded-pill px-3 py-2 text-nowrap" href="#">
+                                    Voir <span class="d-none d-sm-inline">les </span>prix <i class="fz-10 ml-2 fa fa-caret-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-6 col-md-3">
+                    <div class="operation card border-transparent h-100 d-flex flex-column justify-content-between border-right-a border-right-h33 border-right-orange">
+                        <a href="#" title="Plus d'info sur Remplacement de chasse d'eau WC" onclick="ga('send', 'event', 'listemetier', 'Voir les professionnels', 'pro', {'nonInteraction': 1});">
+                            <img class="d-block h-16 card-img-top img-fluid lazy" data-original="images/operation/operation135.svg" src="images/operation/operation135.svg" alt="Tarifs pour Remplacement de chasse d'eau WC">
+                        </a>
+                        <h3 class="font-weight-bold fz-15">Remplacement de chasse d'eau WC</h3>
+                        <div class="card-body text-center d-flex flex-column justify-content-end">
+                            <div class="prix-moyen">
+                                <small>à partir de</small>
+                            </div>
+                            <h4 class="card-title text-orange font-weight-bold fz-30">
+                                94<sup>€</sup>
+                                <small>TTC</small>
+                            </h4>
+                            <div class="card-description text-center mt-2">
+                                <a class="btn btn-orange rounded-pill px-3 py-2 text-nowrap" href="#">
+                                    Voir <span class="d-none d-sm-inline">les </span>prix <i class="fz-10 ml-2 fa fa-caret-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-6 col-md-3">
+                    <div class="operation card border-transparent h-100 d-flex flex-column justify-content-between border-right-a border-right-h33 border-right-orange">
+                        <a href="#" title="Plus d'info sur Remplacement de ballon d'eau chaude / cumulus" onclick="ga('send', 'event', 'listemetier', 'Voir les professionnels', 'pro', {'nonInteraction': 1});">
+                            <img class="d-block h-16 card-img-top img-fluid lazy" data-original="images/operation/operation213.svg" src="images/operation/operation213.svg" alt="Tarifs pour Remplacement de ballon d'eau chaude / cumulus">
+                        </a>
+                        <h3 class="font-weight-bold fz-15">Remplacement de ballon d'eau chaude / cumulus</h3>
+                        <div class="card-body text-center d-flex flex-column justify-content-end">
+                            <div class="prix-moyen">
+                                <small>à partir de</small>
+                            </div>
+                            <h4 class="card-title text-orange font-weight-bold fz-30">
+                                605<sup>€</sup>
+                                <small>TTC</small>
+                            </h4>
+                            <div class="card-description text-center mt-2">
+                                <a class="btn btn-orange rounded-pill px-3 py-2 text-nowrap" href="#">
+                                    Voir <span class="d-none d-sm-inline">les </span>prix <i class="fz-10 ml-2 fa fa-caret-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-6 col-md-3">
+                    <div class="operation card border-transparent h-100 d-flex flex-column justify-content-between">
+                        <a href="#" title="Plus d'info sur Remplacement d'un groupe de sécurité de chauffe-eau" onclick="ga('send', 'event', 'listemetier', 'Voir les professionnels', 'pro', {'nonInteraction': 1});">
+                            <img class="d-block h-16 card-img-top img-fluid lazy" data-original="images/operation/operation233.svg" src="images/operation/operation233.svg" alt="Tarifs pour Remplacement d'un groupe de sécurité de chauffe-eau">
+                        </a>
+                        <h3 class="font-weight-bold fz-15">Remplacement d'un groupe de sécurité de chauffe-eau</h3>
+                        <div class="card-body text-center d-flex flex-column justify-content-end">
+                            <div class="prix-moyen">
+                                <small>à partir de</small>
+                            </div>
+                            <h4 class="card-title text-orange font-weight-bold fz-30">
+                                72<sup>€</sup>
+                                <small>TTC</small>
+                            </h4>
+                            <div class="card-description text-center mt-2">
+                                <a class="btn btn-orange rounded-pill px-3 py-2 text-nowrap" href="#">
+                                    Voir <span class="d-none d-sm-inline">les </span>prix <i class="fz-10 ml-2 fa fa-caret-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bandeau bandeau-3 centre">
+            <div class="bloc_texte">
+                <h2 class="titre text-center">Notre histoire depuis 2007</h2>
+                <div class="texte">
+                    <strong>Il était une fois...</strong><br>
+                    ... l'idée folle et farfelue de créer une start-up Internet dans un territoire coupé du monde, à Gap
+                    au coeur des Hautes-Alpes. Pas d'autoroute, pas de TGV et quelques marmottes en été.
+                </div>
+                <div class="texte">
+                    <strong>L'idée</strong> : simplifier la relation entre <strong>artisans</strong> et <strong>consommateurs</strong> grâce à Internet.
+                    Constatant que la <strong>recherche d'un bon artisan</strong> pour faire des travaux est anxiogène pour les particuliers, nous proposons la
+                    possibilité de <strong>commander en ligne son artisan</strong> après avoir comparé les prix et les avis des consommateurs.
+                </div>
+                <div class="texte">
+                    Nous connaissons la <strong>qualité des prestations des artisans</strong> de notre réseau. C'est notre différence,
+                    et c'est cette qualité que nous apportons aux particuliers, <strong>pour que chacun puisse trouver et commander son artisan en toute confiance, et même sans passer par la
+                    case devis !</strong>
+                </div>
+                <div class="texte">
+                    <strong>Nos valeurs : simplicité, intégrité, et sens du service, portés par une équipe à taille humaine.</strong>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <h2 class="text-center text-orange font-weight-bold my-3">On parle de nous</h2>
+            <a class="row" href="#">
+                <div class="col">
+                    <img data-original="assets/partenaire.jpg" src="assets/partenaire.jpg" class="img-fluid lazy" alt="Meilleurartisan.com soutenu par IRCE" style="display: inline;">
+                </div>
+                <div class="col">
+                    <img data-original="assets/partenaire.jpg" src="assets/partenaire.jpg" class="img-fluid lazy" alt="Meilleurartisan.com dans le Dauphiné" style="display: inline;">
+                </div>
+                <div class="col">
+                    <img data-original="assets/partenaire.jpg" src="assets/partenaire.jpg" class="img-fluid lazy" alt="Meilleurartisan.com partenaire de l'université de Provence" style="display: inline;">
+                </div>
+                <!-- Force next columns to break to new line at md breakpoint and up -->
+                <div class="w-100 d-block d-sm-none"></div>
+                <div class="col">
+                    <img data-original="assets/partenaire.jpg" src="assets/partenaire.jpg" class="img-fluid lazy" alt="Meilleurartisan.com sur DICI TV" style="display: inline;">
+                </div>
+                <div class="col">
+                    <img data-original="assets/partenaire.jpg" src="assets/partenaire.jpg" class="img-fluid lazy" alt="Meilleurartisan.com sélectionné par la FrenchTech" style="display: inline;">
+                </div>
+                <div class="col">
+                    <img data-original="assets/partenaire.jpg" src="assets/partenaire.jpg" class="img-fluid lazy" alt="Meilleurartisan.com partenaire de Google" style="display: inline;">
+                </div>
+                <!-- Force next columns to break to new line at md breakpoint and up -->
+                <div class="w-100 d-block d-sm-none"></div>
+                <div class="col">
+                    <img data-original="assets/partenaire.jpg" src="assets/partenaire.jpg" class="img-fluid lazy" alt="Meilleurartisan.com à Vivatechnology" style="display: inline;">
+                </div>
+                <div class="col">
+                    <img data-original="assets/partenaire.jpg" src="assets/partenaire.jpg" class="img-fluid lazy" alt="Meilleurartisan.com sur Femme Actuelle" style="display: inline;">
+                </div>
+            </a>
 
+        </div>
+        <div class="pt-3 p-5 mt-5" style="background: url('assets/bg.jpg');">
+            <div class="container text-center text-white">
+                <h2 class="text-orange fz-40 font-weight-bold my-4">Professionnel du bâtiment ?</h2>
+                <div class="nombre fz-60 font-weight-bold">29000</div>
+                <p class="mt-n3">professionnels du bâtiment nous ont déjà rejoints !</p>
+                <div class="text-orange fz-20 font-weight-bold mt-n2">Pourquoi pas vous ?</div>
+                <p class="mt-2">
+                    MeilleurArtisan.com propose de nombreux services à disposition des professionnels<br>
+                    pour les aider à développer leur chiffre d'affaires et trouver des chantiers.
+                </p>
+                <a href="#" class="btn btn-orange rounded-pill font-weight px-4 py-3">Découvrez nos services <i class="fa fa-caret-right"></i></a>
+            </div>
+        </div>
+        <div class="flex px-3 text-center py-3">
+            <img data-original="asset/paiement.png" src="assets/paiement.png" alt="Paiement des travaux sécurisé" class="img-fluid lazy" style="display: inline;">
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 hover:link-orange pt-3 pt-md-5 pb-2 pb-md-3">
+        <div class="container">
+            <div class="row xs:space-y-2 md:space-x-5">
+                <div class="col-12 col-md-3">
+                    <form action="" method="post">
+                        <h3 class="text-orange text-center text-md-left font-weight-bold fz-18">Inscrivez vous a notre newsletter</h3>
+                        <div class="mt-3 mb-2">
+                            <input type="text" placeholder="Votre e-mail" class="form-control placeholder-orange h-auto text-center rounded-pill p-3 small font-weight bg-transparent text-orange border-2 border-orange">
+                            <button class="btn btn-orange w-100 mt-3 rounded-pill p-3 small font-weight">Je m'inscris</button>
+                        </div>
+                        <small class="fz-11">
+                            En cliquant sur Je m'inscris, vous acceptez de recevoir la newsletter du site.
+                        </small>
+                    </form>
+                </div>
+                <div class="col-12 col-md-3 text-center text-md-left">
+                    <h3 class="text-orange font-weight-bold fz-18">
+                        Nos prestations
+                    </h3>
+                    <div class="row fz-12 ln-20x">
+                        <div class="col-6 col-md-12">
+                            <ul class="px-0 mb-0">
+                                <li><a href="#">Electricien</a></li>
+                                <li><a href="#">Plombier</a></li>
+                                <li><a href="#">Serrurier</a></li>
+                                <li><a href="#">Chauffagiste</a></li>
+                                <li><a href="#">Peintre</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-12">
+                            <ul class="px-0 mb-0">
+                                <li><a href="#">Menuisier</a></li>
+                                <li><a href="#">Carreleur</a></li>
+                                <li><a href="#">Architecte</a></li>
+                                <li><a href="#">Tous les métiers du bâtiment</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-3 pt-3 border-top border-gray">
+                        <a href="#" class="text-center text-uppercase fz-12 font-bold">Recherche directe par ville</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3 text-center text-md-left">
+                    <h3 class="text-orange font-weight-bold fz-18">
+                        A propos
+                    </h3>
+                    <div class="row fz-12 ln-20x">
+                        <div class="col-6 col-md-12">
+                            <ul class="px-0 mb-0">
+                                <li><a href="#">Qui sommes nous ?</a></li>
+                                <li><a href="#">Blog / Actualites</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-12">
+                            <ul class="px-0 mb-0">
+                                <li><a href="#">Nos Partenaires</a></li>
+                                <li><a href="#">Presse</a></li>
+                                <li><a href="#">CGV et mentions legales</a></li>
+                                <li><a href="#">Comment ca marche ?</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3 text-center text-md-left">
+                    <h3 class="text-orange font-weight-bold fz-18">
+                        Support et contact
+                    </h3>
+                    <ul class="list-none fz-12 px-0 ln-20x">
+                        <li><a class="hover:text-orange" href="#">04 86 68 81 31</a></li>
+                        <li><a class="hover:text-orange" href="#">Forum pour vos questions batiment</a></li>
+                    </ul>
+                    <h3 class="text-orange font-weight-bold fz-18">
+                        Suivez-nous !
+                    </h3>
+                    <ul class="d-inline-flex justify-content-center list-none space-x-4 px-0 mt-2">
+                        <li><a href="#" class="border border-gray hover:border-orange p-1 w-8 h-8 flex-center rounded-circle"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#" class="border border-gray hover:border-orange p-1 w-8 h-8 flex-center rounded-circle"><i class="fab fa-pinterest"></i></a></li>
+                        <li><a href="#" class="border border-gray hover:border-orange p-1 w-8 h-8 flex-center rounded-circle"><i class="fab fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer mt-3">
+                <div class="text-center">
+                    &copy; { year }
+                </div>
+            </div>
+        </div>
+    </footer>
     
+    <div id="cookies" class="bg-gray fixed-bottom p-2 small text-center ln-16">
+        <span>
+            COVID-19 : la santé est notre priorité. Nous avons renforcé nos communications auprès de nos professionnels pour adopter les gestes barrières. Dans le cas d’un rendez-vous à votre domicile, nous vous recommandons également de respecter ces mesures pour votre santé, celle de l’artisan, et pour contenir la propagation du virus. En naviguant sur notre site, vous acceptez l’utilisation de cookies pour nous permettre de mesurer l’audience et de vous offrir une meilleure expérience de navigation, des services (partages sociaux…) et contenus adaptés. 
+        </span>
+        <a href="#" class="ml-1 text-orange font-weight break-word" target="_blank">En savoir plus.</a>
+        <a href="#" class="ml-1 text-orange font-weight break-word" target="_blank">Gérez votre consentement sur les cookies.</a>
+        <button class="btn btn-orange hover:bg-orange-100 hover:text-white ml-1 mt-1 d-inline-block px-2 py-1">Fermer</button>
+    </div>
+
     <script src="js/jquery-3.3.1.slim.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/all.min.js"></script>
 
     <script src="js/app.js"></script>
 </body>

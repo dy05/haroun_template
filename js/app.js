@@ -1,4 +1,4 @@
-windom.onload = function() {
+window.onload = function() {
     if ($(window).width() > 992) {
         $(window).scroll(function(){  
             if ($(this).scrollTop() > 40) {
@@ -12,4 +12,12 @@ windom.onload = function() {
             }   
         });
     } // end if
+
+
+    let consentButton = document.querySelector('#cookies button')
+    if (consentButton) {
+        consentButton.addEventListener('click', function() {
+            consentButton.parentElement.classList.add('d-none');
+        })
+    }
 }
