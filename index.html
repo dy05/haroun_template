@@ -10,42 +10,44 @@
     <title>Document</title>
 </head>
 <body>
-    <header class="overflow-hidden">
-        <div class="h-110 d-none pt-1 d-sm-block" style="background: url('assets/bg.jpg');">
-            <p class="text-center px-2 pt-1 pb-2 align-items-md-center fz-14 fw-500 text-white d-m-flex">
+    <header>
+        <div class="preheader h-auto pt-1 d-none d-md-block" style="background: url('./assets/bg.jpg');">
+            <p class="text-center px-2 pt-1 pb-2 mb-0 align-items-md-center fz-14 fw-500 text-white d-m-flex">
                 Depuis 2007,
                 <a href="#" class="text-orange mr-1" title="Lire les témoignages">
                     plus de 90% de clients satisfaits
                 </a>
                 | Remboursement sans frais sous 48H si annulation | De vrais pros super Pros
-                <a class="btn btn-orange rounded-pill ml-2 mt-n1/2 py-0" href="#">
+                <a class="btn btn-orange rounded-pill ml-2 mt-n1/2 py-1 px-1" href="#">
                     Professionnel ?
                 </a>
             </p>
         </div>
-<!--
+
         <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
                 <div class="d-flex align-self-end align-items-center align-items-md-end navbar-collapse" id="navbarNav">
-                    <div class="navbar-item d-inline-block d-sm-none">
+                    <div class="navbar-item d-inline-block d-sm-none d-md-none">
                         <button id="toggle_menu_gamme" class="navbar-link">
                             <i class="fa fa-bars"></i>
                         </button>
                     </div>
 
-                    <a class="navbar-brand" href="#" title="MeilleurArtisan.com">
-                        <img src="assets/logo.png" class="wm-16" alt="Trouver mon artisan">
+                    <a class="navbar-brand w-32x2" href="#" title="">
+                        <img src="assets/logo.png" class="img-responsive" alt="Trouver mon artisan">
                     </a>
                     <div class="navbar-nav mr-auto d-flex flex-row align-items-center">
                         <div class="nav-item" id="navSearchIcon">
-                            <i data-toggle="search" class="icon-search"></i>
-                            <form id="navsearch" class="form-inline">
-                                <input placeholder=" Quels travaux voulez-vous faire ?" type="search" id="autcomplete_algolia" class="input-rounded search searchField form-control" value="">
+                            <i data-toggle="search" class="icon-search d-none"></i>
+                            <form id="navsearch" class="d-none d-md-inline-block form-inline position-relative pl-4">
+                                <input placeholder=" Quels travaux voulez-vous faire ?" type="search" id="autcomplete_algolia"
+                                   class="w-32x3 input-rounded py-4 text-orange placeholder-orange search searchField form-control rounded-pill placeholder-orange
+                                   font-semibold border-orange" style="min-width: 22vw;" value="">
                             </form>
                         </div>
                         <div class="nav-item">
-                            <a title="Contactez MeilleurArtisan.com" href="#" class="nav-link align-self-end menu_contact_marketplace d-none d-md-inline">
-                                <i class="fa fa fa-phone" aria-hidden="true"></i>
+                            <a title="Contactez " href="#" class="nav-link align-self-end menu_contact_marketplace d-none d-md-inline text-gray font-semibold">
+                                <i class="scale-x-90 fa fa fa-phone" aria-hidden="true"></i>
                                 <span>04 86 68 81 31</span>
                             </a>
                         </div>
@@ -53,11 +55,13 @@
 
                     <div class="navbar-nav">
                         <div class="nav-item dropdown">
-                            <a title="S'identifier" class="nav-link" id="navLoginForm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="images/2018-refonte/user_login.svg" alt="Connexion"><span class="d-none d-sm-inline textesousicone"><br>Compte</span>
-                            </a>
+                            <button type="button" title="S'identifier" class="btn bg-transparent nav-link text-gray font-semibold fz-14 text-center" id="navLoginForm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img class="w-10 h-10" src="images/2018-refonte/user_login.svg" alt="Connexion"><span class="d-none d-sm-inline textesousicone">
+                                <br>Compte
+                            </span>
+                            </button>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navLoginForm">
-                                <form class="px-4 py-3" action="/docs/accesprofessionnel.php?connect=IDENT" method="post">
+                                <form class="px-4 py-3" action="" method="post">
                                     <div class="form-group">
                                         <label for="email">Adresse email</label>
                                         <input type="email" class="form-control" id="email" name="email" placeholder="Ex: alain.durand@gmail.com" pattern="([a-zA-Z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*)@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?" required="">
@@ -69,31 +73,33 @@
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-orange" id="login" name="login" value="Connexion">Connexion</button>
                                     </div>
-                                    <div class="text-center"><button class="btn btn-link" onclick="location.href='/docs/oubli-mdp.php'">Mot de passe oublié ?</button></div>
+                                    <div class="text-center"><a class="btn btn-link" href="#">Mot de passe oublié ?</a></div>
                                 </form>
                                 <div class="dropdown-divider"></div>
                                 <div class="dropdown-item">
-                                    <form action="/docs/sociallogin.php" method="get">
+                                    <form action="" method="get">
                                         <input type="hidden" name="provider" value="Google">
                                         <input type="submit" name="action" value="" class="sociallogin_google">
                                     </form>
                                 </div>
                                 <div class="dropdown-item">
-                                    <form action="/docs/sociallogin.php" method="get">
+                                    <form action="" method="get">
                                         <input type="hidden" name="provider" value="Facebook">
                                         <input type="submit" name="action" value="" class="sociallogin_facebook">
                                     </form>
                                 </div>
                                 <div class="dropdown-divider"></div>
-                                <div class="text-center"><button class="btn btn-link" onclick="location.href='/docs/identification.php'">Créer un compte</button></div>
+                                <div class="text-center"><a href="#" class="btn btn-link">Créer un compte</a></div>
 
                             </div>
                         </div>
 
-
                         <div class="nav-item" id="paniermp">
-                            <a class="nav-link" title="Voir mon panier" onclick="location.href='/docs/commande-panier.php'">
-                                <img src="images/2018-refonte/panier_orange.svg" alt="Panier"><span class="d-none d-sm-inline textesousicone"><br>Panier</span>
+                            <a href="#" class="cursor-pointer nav-link text-gray font-semibold fz-14 text-center" title="Voir mon panier">
+                                <img class="w-10 h-10" src="images/2018-refonte/panier_orange.svg" alt="Panier">
+                                <span class="d-none d-sm-inline textesousicone">
+                                <br>Panier
+                            </span>
                             </a>
                             <div id="nbProductCart" class="badge badge-light"></div>
                         </div>
@@ -101,20 +107,7 @@
                 </div>
             </div>
         </nav>
-        <nav id="navbar_top" class=" d-none navbar navbar-expand-lg navbar-dark bg-primary">
-            <div class="container">
-                <a class="navbar-brand" href="#">Logo</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="main_nav">
-                    <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="#"> Menu item </a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
--->
+
         <div id="menu_gamme" class="bg-orange d-none md:d-block">
             <div class="container">
                 <div class="nav nav-pills nav-fill">
@@ -241,179 +234,706 @@
             </div>
         </div>
     </header>
-    
-    
-    <main>
-        <div class="container text-center mb-5 pt-4">
-            <h2 class="text-orange font-weight-bold">Nos rock stars :</h2>
-            <div class="row justify-content-center mt-4" id="listeoperation">
-                <div class="col-6 col-sm-6 col-md-3 px-0 border-right-a border-right-h33 border-right-orange">
-                    <div class="operation card border-transparent h-100 d-flex flex-column justify-content-between">
-                        <a href="#" title="Plus d'info sur Contrat d'entretien chaudière gaz" onclick="ga('send', 'event', 'listemetier', 'Voir les professionnels', 'pro', {'nonInteraction': 1});">
-                            <img class="d-block h-16 card-img-top img-fluid lazy" data-original="images/operation/operation11.svg" src="images/operation/operation11.svg" alt="Tarifs pour Contrat d'entretien chaudière gaz">
-                        </a>
-                        <h3 class="font-weight-bold fz-15">Contrat d'entretien chaudière gaz</h3>
-                        <div class="card-body text-center d-flex flex-column justify-content-end">
-                            <div class="prix-moyen">
-                                <small>à partir de</small>
-                            </div>
-                            <h4 class="card-title text-orange font-weight-bold fz-30">
-                                97<sup>€</sup>
-                                <small>TTC</small>
-                            </h4>
-                            <div class="card-description text-center mt-2">
-                                <a class="btn btn-orange rounded-pill px-3 py-2 text-nowrap" href="#">
-                                    Voir <span class="d-none d-sm-inline">les </span>prix <i class="fz-10 ml-2 fa fa-caret-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-6 col-md-3">
-                    <div class="operation card border-transparent h-100 d-flex flex-column justify-content-between border-right-a border-right-h33 border-right-orange">
-                        <a href="#" title="Plus d'info sur Remplacement de chasse d'eau WC" onclick="ga('send', 'event', 'listemetier', 'Voir les professionnels', 'pro', {'nonInteraction': 1});">
-                            <img class="d-block h-16 card-img-top img-fluid lazy" data-original="images/operation/operation135.svg" src="images/operation/operation135.svg" alt="Tarifs pour Remplacement de chasse d'eau WC">
-                        </a>
-                        <h3 class="font-weight-bold fz-15">Remplacement de chasse d'eau WC</h3>
-                        <div class="card-body text-center d-flex flex-column justify-content-end">
-                            <div class="prix-moyen">
-                                <small>à partir de</small>
-                            </div>
-                            <h4 class="card-title text-orange font-weight-bold fz-30">
-                                94<sup>€</sup>
-                                <small>TTC</small>
-                            </h4>
-                            <div class="card-description text-center mt-2">
-                                <a class="btn btn-orange rounded-pill px-3 py-2 text-nowrap" href="#">
-                                    Voir <span class="d-none d-sm-inline">les </span>prix <i class="fz-10 ml-2 fa fa-caret-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-6 col-md-3">
-                    <div class="operation card border-transparent h-100 d-flex flex-column justify-content-between border-right-a border-right-h33 border-right-orange">
-                        <a href="#" title="Plus d'info sur Remplacement de ballon d'eau chaude / cumulus" onclick="ga('send', 'event', 'listemetier', 'Voir les professionnels', 'pro', {'nonInteraction': 1});">
-                            <img class="d-block h-16 card-img-top img-fluid lazy" data-original="images/operation/operation213.svg" src="images/operation/operation213.svg" alt="Tarifs pour Remplacement de ballon d'eau chaude / cumulus">
-                        </a>
-                        <h3 class="font-weight-bold fz-15">Remplacement de ballon d'eau chaude / cumulus</h3>
-                        <div class="card-body text-center d-flex flex-column justify-content-end">
-                            <div class="prix-moyen">
-                                <small>à partir de</small>
-                            </div>
-                            <h4 class="card-title text-orange font-weight-bold fz-30">
-                                605<sup>€</sup>
-                                <small>TTC</small>
-                            </h4>
-                            <div class="card-description text-center mt-2">
-                                <a class="btn btn-orange rounded-pill px-3 py-2 text-nowrap" href="#">
-                                    Voir <span class="d-none d-sm-inline">les </span>prix <i class="fz-10 ml-2 fa fa-caret-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-6 col-md-3">
-                    <div class="operation card border-transparent h-100 d-flex flex-column justify-content-between">
-                        <a href="#" title="Plus d'info sur Remplacement d'un groupe de sécurité de chauffe-eau" onclick="ga('send', 'event', 'listemetier', 'Voir les professionnels', 'pro', {'nonInteraction': 1});">
-                            <img class="d-block h-16 card-img-top img-fluid lazy" data-original="images/operation/operation233.svg" src="images/operation/operation233.svg" alt="Tarifs pour Remplacement d'un groupe de sécurité de chauffe-eau">
-                        </a>
-                        <h3 class="font-weight-bold fz-15">Remplacement d'un groupe de sécurité de chauffe-eau</h3>
-                        <div class="card-body text-center d-flex flex-column justify-content-end">
-                            <div class="prix-moyen">
-                                <small>à partir de</small>
-                            </div>
-                            <h4 class="card-title text-orange font-weight-bold fz-30">
-                                72<sup>€</sup>
-                                <small>TTC</small>
-                            </h4>
-                            <div class="card-description text-center mt-2">
-                                <a class="btn btn-orange rounded-pill px-3 py-2 text-nowrap" href="#">
-                                    Voir <span class="d-none d-sm-inline">les </span>prix <i class="fz-10 ml-2 fa fa-caret-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bandeau bandeau-3 centre">
-            <div class="bloc_texte">
-                <h2 class="titre text-center">Notre histoire depuis 2007</h2>
-                <div class="texte">
-                    <strong>Il était une fois...</strong><br>
-                    ... l'idée folle et farfelue de créer une start-up Internet dans un territoire coupé du monde, à Gap
-                    au coeur des Hautes-Alpes. Pas d'autoroute, pas de TGV et quelques marmottes en été.
-                </div>
-                <div class="texte">
-                    <strong>L'idée</strong> : simplifier la relation entre <strong>artisans</strong> et <strong>consommateurs</strong> grâce à Internet.
-                    Constatant que la <strong>recherche d'un bon artisan</strong> pour faire des travaux est anxiogène pour les particuliers, nous proposons la
-                    possibilité de <strong>commander en ligne son artisan</strong> après avoir comparé les prix et les avis des consommateurs.
-                </div>
-                <div class="texte">
-                    Nous connaissons la <strong>qualité des prestations des artisans</strong> de notre réseau. C'est notre différence,
-                    et c'est cette qualité que nous apportons aux particuliers, <strong>pour que chacun puisse trouver et commander son artisan en toute confiance, et même sans passer par la
-                    case devis !</strong>
-                </div>
-                <div class="texte">
-                    <strong>Nos valeurs : simplicité, intégrité, et sens du service, portés par une équipe à taille humaine.</strong>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <h2 class="text-center text-orange font-weight-bold my-3">On parle de nous</h2>
-            <a class="row" href="#">
-                <div class="col">
-                    <img data-original="assets/partenaire.jpg" src="assets/partenaire.jpg" class="img-fluid lazy" alt="Meilleurartisan.com soutenu par IRCE" style="display: inline;">
-                </div>
-                <div class="col">
-                    <img data-original="assets/partenaire.jpg" src="assets/partenaire.jpg" class="img-fluid lazy" alt="Meilleurartisan.com dans le Dauphiné" style="display: inline;">
-                </div>
-                <div class="col">
-                    <img data-original="assets/partenaire.jpg" src="assets/partenaire.jpg" class="img-fluid lazy" alt="Meilleurartisan.com partenaire de l'université de Provence" style="display: inline;">
-                </div>
-                <!-- Force next columns to break to new line at md breakpoint and up -->
-                <div class="w-100 d-block d-sm-none"></div>
-                <div class="col">
-                    <img data-original="assets/partenaire.jpg" src="assets/partenaire.jpg" class="img-fluid lazy" alt="Meilleurartisan.com sur DICI TV" style="display: inline;">
-                </div>
-                <div class="col">
-                    <img data-original="assets/partenaire.jpg" src="assets/partenaire.jpg" class="img-fluid lazy" alt="Meilleurartisan.com sélectionné par la FrenchTech" style="display: inline;">
-                </div>
-                <div class="col">
-                    <img data-original="assets/partenaire.jpg" src="assets/partenaire.jpg" class="img-fluid lazy" alt="Meilleurartisan.com partenaire de Google" style="display: inline;">
-                </div>
-                <!-- Force next columns to break to new line at md breakpoint and up -->
-                <div class="w-100 d-block d-sm-none"></div>
-                <div class="col">
-                    <img data-original="assets/partenaire.jpg" src="assets/partenaire.jpg" class="img-fluid lazy" alt="Meilleurartisan.com à Vivatechnology" style="display: inline;">
-                </div>
-                <div class="col">
-                    <img data-original="assets/partenaire.jpg" src="assets/partenaire.jpg" class="img-fluid lazy" alt="Meilleurartisan.com sur Femme Actuelle" style="display: inline;">
-                </div>
-            </a>
 
-        </div>
-        <div class="pt-3 p-5 mt-5" style="background: url('assets/bg.jpg');">
-            <div class="container text-center text-white">
-                <h2 class="text-orange fz-40 font-weight-bold my-4">Professionnel du bâtiment ?</h2>
-                <div class="nombre fz-60 font-weight-bold">29000</div>
-                <p class="mt-n3">professionnels du bâtiment nous ont déjà rejoints !</p>
-                <div class="text-orange fz-20 font-weight-bold mt-n2">Pourquoi pas vous ?</div>
-                <p class="mt-2">
-                    MeilleurArtisan.com propose de nombreux services à disposition des professionnels<br>
-                    pour les aider à développer leur chiffre d'affaires et trouver des chantiers.
-                </p>
-                <a href="#" class="btn btn-orange rounded-pill font-weight px-4 py-3">Découvrez nos services <i class="fa fa-caret-right"></i></a>
+    <main>
+        <div id="site_espace">
+            <div id="home_page">
+                <div class="bandeau bandeau-1 h-auto bg-no-repeat p-5" style="background-image: url('./assets/homeaccueil.jpg');">
+                    <div class="bloc_texte text-center w-1/2 ml-lg-auto pr-lg-5 pt-3 text-white">
+                        <h1 class="titre fz-26 md:fz-40 font-weight-bold mb-4">Pour des travaux au cordeau<br>Frappez à la bonne porte !</h1>
+                        <a href="#" class="btn btn-orange font-weight-bold py-3 px-4 fz-20 rounded-pill">Trouver mon artisan <i class="mt-2 fa fa-caret-right"></i></a>
+                        <div class="texte texte-lg fz-20 my-4">Des packs bien charpentés et tout compris.<br> Des prix affichés sans ciller, vous êtes satisfaits, nous aussi, sinon on vous rembourse of course.</div>
+                    </div>
+                </div>
+
+                <div class="container text-center py-5">
+                    <h2 class="text-orange font-weight-bold fz-24 md:fz-40 mb-5">Nos rock stars :</h2>
+                    <div class="row justify-content-center mt-4" id="listeoperation">
+                        <div class="col-6 col-sm-6 col-md-3 px-4 border-right-a border-right-h33 border-right-orange">
+                            <div class="operation card w-3/4 mx-auto border-transparent h-100 d-flex flex-column justify-content-between">
+                                <a href="#" title="Plus d'info sur Contrat d'entretien chaudière gaz" onclick="ga('send', 'event', 'listemetier', 'Voir les professionnels', 'pro', {'nonInteraction': 1});">
+                                    <img class="mx-auto d-block w-auto mw-4/5 h-16 card-img-top img-fluid lazy" data-original="images/operation/operation11.svg" src="images/operation/operation11.svg" alt="Tarifs pour Contrat d'entretien chaudière gaz">
+                                </a>
+                                <h3 class="font-weight-bold fz-15 mt-2 px-2">Contrat d'entretien chaudière gaz</h3>
+                                <div class="card-body text-center mt-n2 d-flex flex-column justify-content-end">
+                                    <div class="prix-moyen">
+                                        <small>à partir de</small>
+                                    </div>
+                                    <h4 class="card-title text-orange font-weight-bold fz-30">
+                                        97<sup>€</sup>
+                                        <small>TTC</small>
+                                    </h4>
+                                    <div class="card-description text-center mt-n2">
+                                        <a class="btn btn-orange rounded-pill px-3 py-2 text-nowrap" href="#">
+                                            Voir <span class="d-none d-sm-inline">les </span>prix <i class="fz-10 ml-2 fa fa-caret-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-6 col-md-3 px-4 border-right-a border-right-h33 border-right-orange">
+                            <div class="operation card w-3/4 mx-auto border-transparent h-100 d-flex flex-column justify-content-between">
+                                <a href="#" title="Plus d'info sur Remplacement de chasse d'eau WC" onclick="ga('send', 'event', 'listemetier', 'Voir les professionnels', 'pro', {'nonInteraction': 1});">
+                                    <img class="mx-auto d-block w-auto mw-4/5 h-16 card-img-top img-fluid lazy" data-original="images/operation/operation135.svg" src="images/operation/operation135.svg" alt="Tarifs pour Remplacement de chasse d'eau WC">
+                                </a>
+                                <h3 class="font-weight-bold fz-15 mt-2 px-2">Remplacement de chasse d'eau WC</h3>
+                                <div class="card-body text-center mt-n2 d-flex flex-column justify-content-end">
+                                    <div class="prix-moyen">
+                                        <small>à partir de</small>
+                                    </div>
+                                    <h4 class="card-title text-orange font-weight-bold fz-30">
+                                        94<sup>€</sup>
+                                        <small>TTC</small>
+                                    </h4>
+                                    <div class="card-description text-center mt-n2">
+                                        <a class="btn btn-orange rounded-pill px-3 py-2 text-nowrap" href="#">
+                                            Voir <span class="d-none d-sm-inline">les </span>prix <i class="fz-10 ml-2 fa fa-caret-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-6 col-md-3 px-4 border-right-a border-right-h33 border-right-orange">
+                            <div class="operation card w-3/4 mx-auto border-transparent h-100 d-flex flex-column justify-content-between">
+                                <a href="#" title="Plus d'info sur Remplacement de ballon d'eau chaude / cumulus" onclick="ga('send', 'event', 'listemetier', 'Voir les professionnels', 'pro', {'nonInteraction': 1});">
+                                    <img class="mx-auto d-block w-auto mw-4/5 h-16 card-img-top img-fluid lazy" data-original="images/operation/operation213.svg" src="images/operation/operation213.svg" alt="Tarifs pour Remplacement de ballon d'eau chaude / cumulus">
+                                </a>
+                                <h3 class="font-weight-bold fz-15 mt-2 px-2">Remplacement de ballon d'eau chaude / cumulus</h3>
+                                <div class="card-body text-center mt-n2 d-flex flex-column justify-content-end">
+                                    <div class="prix-moyen">
+                                        <small>à partir de</small>
+                                    </div>
+                                    <h4 class="card-title text-orange font-weight-bold fz-30">
+                                        605<sup>€</sup>
+                                        <small>TTC</small>
+                                    </h4>
+                                    <div class="card-description text-center mt-n2">
+                                        <a class="btn btn-orange rounded-pill px-3 py-2 text-nowrap" href="#">
+                                            Voir <span class="d-none d-sm-inline">les </span>prix <i class="fz-10 ml-2 fa fa-caret-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-6 col-md-3 px-4">
+                            <div class="operation card w-3/4 mx-auto border-transparent h-100 d-flex flex-column justify-content-between">
+                                <a href="#" title="Plus d'info sur Remplacement d'un groupe de sécurité de chauffe-eau" onclick="ga('send', 'event', 'listemetier', 'Voir les professionnels', 'pro', {'nonInteraction': 1});">
+                                    <img class="mx-auto d-block w-auto mw-4/5 h-16 card-img-top img-fluid lazy" data-original="images/operation/operation233.svg" src="images/operation/operation233.svg" alt="Tarifs pour Remplacement d'un groupe de sécurité de chauffe-eau">
+                                </a>
+                                <h3 class="font-weight-bold fz-15 mt-2 px-2">Remplacement d'un groupe de sécurité de chauffe-eau</h3>
+                                <div class="card-body text-center mt-n2 d-flex flex-column justify-content-end">
+                                    <div class="prix-moyen">
+                                        <small>à partir de</small>
+                                    </div>
+                                    <h4 class="card-title text-orange font-weight-bold fz-30">
+                                        72<sup>€</sup>
+                                        <small>TTC</small>
+                                    </h4>
+                                    <div class="card-description text-center mt-n2">
+                                        <a class="btn btn-orange rounded-pill px-3 py-2 text-nowrap" href="#">
+                                            Voir <span class="d-none d-sm-inline">les </span>prix <i class="fz-10 ml-2 fa fa-caret-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray py-4">
+                    <div class="container py-3 px-3 text-center">
+                        <h2 class="titre fz-24 md:fz-40 text-orange font-weight-bold mb-4">Ils nous aiment, et nous aussi <i class="fa fa-smile" aria-hidden="true"></i></h2>
+
+                        <div class="diapo_avisclients pt-2 pb-4 px-3">
+                            <div id="carouselAvis" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+
+                                    <div class="carousel-item">
+                                        <div class="row">
+                                            <div class="col-md-6">
+
+                                                <div class="avis d-flex align-items-center justify-content-center">
+                                                    <div>
+                                                        <div class="note"><img src="/images/2018-refonte/etoile_pleine.svg" alt="0"><img src="/images/2018-refonte/etoile_pleine.svg" alt="1"><img src="/images/2018-refonte/etoile_pleine.svg" alt="2"><img src="/images/2018-refonte/etoile_pleine.svg" alt="3"><img src="/images/2018-refonte/etoile_vide.svg" alt="4"></div>
+                                                        <div class="infos">
+                                                            B.                                                        Laurence "Ok"
+                                                        </div>
+                                                        <p class="commentaire">Ok</p>
+                                                        <p class="date">Le 20/02/2021 à Noisiel ( 77186 )</p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-6">
+
+                                                <div class="avis d-flex align-items-center justify-content-center">
+                                                    <div>
+                                                        <div class="note"><img src="/images/2018-refonte/etoile_pleine.svg" alt="0"><img src="/images/2018-refonte/etoile_pleine.svg" alt="1"><img src="/images/2018-refonte/etoile_pleine.svg" alt="2"><img src="/images/2018-refonte/etoile_pleine.svg" alt="3"><img src="/images/2018-refonte/etoile_pleine.svg" alt="4"></div>
+                                                        <div class="infos">
+                                                            E.                                                        Jean-rémi "parfait"
+                                                        </div>
+                                                        <p class="commentaire">parfait, nikel...</p>
+                                                        <p class="date">Le 20/02/2021 à Maisons-alfort ( 94700 )</p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <div class="row">
+                                            <div class="col-md-6">
+
+                                                <div class="avis d-flex align-items-center justify-content-center">
+                                                    <div>
+                                                        <div class="note"><img src="/images/2018-refonte/etoile_pleine.svg" alt="0"><img src="/images/2018-refonte/etoile_pleine.svg" alt="1"><img src="/images/2018-refonte/etoile_pleine.svg" alt="2"><img src="/images/2018-refonte/etoile_pleine.svg" alt="3"><img src="/images/2018-refonte/etoile_pleine.svg" alt="4"></div>
+                                                        <div class="infos">
+                                                            B.                                                        François "tres safisfait du service."
+                                                        </div>
+                                                        <p class="commentaire">très bon service : pratique . équipe réactive  et bon suivi des devis reçus.</p>
+                                                        <p class="date">Le 19/02/2021 à Poissy ( 78300 )</p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-6">
+
+                                                <div class="avis d-flex align-items-center justify-content-center">
+                                                    <div>
+                                                        <div class="note"><img src="/images/2018-refonte/etoile_pleine.svg" alt="0"><img src="/images/2018-refonte/etoile_pleine.svg" alt="1"><img src="/images/2018-refonte/etoile_pleine.svg" alt="2"><img src="/images/2018-refonte/etoile_pleine.svg" alt="3"><img src="/images/2018-refonte/etoile_pleine.svg" alt="4"></div>
+                                                        <div class="infos">
+                                                            D.                                                        Matthieu "Site efficace"
+                                                        </div>
+                                                        <p class="commentaire">Site efficace </p>
+                                                        <p class="date">Le 19/02/2021 à Metz ( 57000 )</p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <div class="row">
+                                            <div class="col-md-6">
+
+                                                <div class="avis d-flex align-items-center justify-content-center">
+                                                    <div>
+                                                        <div class="note"><img src="/images/2018-refonte/etoile_pleine.svg" alt="0"><img src="/images/2018-refonte/etoile_pleine.svg" alt="1"><img src="/images/2018-refonte/etoile_pleine.svg" alt="2"><img src="/images/2018-refonte/etoile_pleine.svg" alt="3"><img src="/images/2018-refonte/etoile_pleine.svg" alt="4"></div>
+                                                        <div class="infos">
+                                                            Z.                                                        Lillian "Utile, rapide, facile"
+                                                        </div>
+                                                        <p class="commentaire">Très utile pour éviter les mauvaises surprises avec des professionnels inconnus</p>
+                                                        <p class="date">Le 19/02/2021 à Toulouse ( 31000 )</p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-6">
+
+                                                <div class="avis d-flex align-items-center justify-content-center">
+                                                    <div>
+                                                        <div class="note"><img src="/images/2018-refonte/etoile_pleine.svg" alt="0"><img src="/images/2018-refonte/etoile_pleine.svg" alt="1"><img src="/images/2018-refonte/etoile_pleine.svg" alt="2"><img src="/images/2018-refonte/etoile_pleine.svg" alt="3"><img src="/images/2018-refonte/etoile_pleine.svg" alt="4"></div>
+                                                        <div class="infos">
+                                                            A.                                                        Hamza "Efficace"
+                                                        </div>
+                                                        <p class="commentaire">Tout s'est bien passé</p>
+                                                        <p class="date">Le 18/02/2021 à Rosny sous bois ( 93110 )</p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item active">
+                                        <div class="row">
+                                            <div class="col-md-6">
+
+                                                <div class="avis d-flex align-items-center justify-content-center">
+                                                    <div>
+                                                        <div class="note"><img src="/images/2018-refonte/etoile_pleine.svg" alt="0"><img src="/images/2018-refonte/etoile_pleine.svg" alt="1"><img src="/images/2018-refonte/etoile_pleine.svg" alt="2"><img src="/images/2018-refonte/etoile_pleine.svg" alt="3"><img src="/images/2018-refonte/etoile_pleine.svg" alt="4"></div>
+                                                        <div class="infos">
+                                                            B.                                                        Souhila "Service de qualité"
+                                                        </div>
+                                                        <p class="commentaire">Efficacité </p>
+                                                        <p class="date">Le 17/02/2021 à Levallois-perret ( 92300 )</p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-6">
+
+                                                <div class="avis d-flex align-items-center justify-content-center">
+                                                    <div>
+                                                        <div class="note"><img src="/images/2018-refonte/etoile_pleine.svg" alt="0"><img src="/images/2018-refonte/etoile_pleine.svg" alt="1"><img src="/images/2018-refonte/etoile_pleine.svg" alt="2"><img src="/images/2018-refonte/etoile_pleine.svg" alt="3"><img src="/images/2018-refonte/etoile_pleine.svg" alt="4"></div>
+                                                        <div class="infos">
+                                                            V.                                                        Jean-baptiste "Parfait."
+                                                        </div>
+                                                        <p class="commentaire">Le professionnel qui devait venir fournir une prestation chez moi n'a pas pu se déplacer. J'ai été immédiatement contacté par un membre de l'équipe qui m'a reprogrammé un autre professionnel le même jour, même heure. Plus que ravis.</p>
+                                                        <p class="date">Le 17/02/2021 à Marseille-10e-arrondissement ( 13010 )</p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#carouselAvis" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Précedent</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselAvis" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Suivant</span>
+                                </a>
+                            </div>
+                        </div>
+
+
+                        <a href="#" class="btn btn-orange rounded-pill py-3 px-4 my-2 font-semibold">Voir + d'avis <i class="fa fa-caret-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="container py-4">
+                    <h2 class="font-weight-bold text-orange text-center fz-24 md:fz-40 mb-4">Vous êtes perdus ?</h2>
+                    <div class="row fonctionnement text-center animated">
+                        <div class="etape etape-1 col-6 col-md-3" style="transform: translate(0px); opacity: 1;">
+                            <a data-toggle="collapse" href="#etape_1">
+                                <div class="image"><img src="/images/2020-refonte/etape_1.jpg" alt="Je recherche un artisan"></div>
+                                <div class="titre_etape">Dites-nous</div>
+                                <div><i class="fa fa-caret-down"></i></div>
+                            </a>
+                            <div class="collapse" id="etape_1">
+                                <p>Dites-nous ce dont vous avez besoin, où vous en avez besoin</p>
+
+                            </div>
+                        </div>
+                        <div class="etape etape-2 col-6 col-md-3" style="transform: translate(0px); opacity: 1;">
+                            <a data-toggle="collapse" href="#etape_2">
+                                <div class="image"><img src="/images/2020-refonte/etape_2.jpg" alt="Je choisis mon artisan"></div>
+                                <div class="titre_etape">Choisissez</div>
+                                <div><i class="fa fa-caret-down"></i></div>
+                            </a>
+                            <div class="collapse" id="etape_2">
+                                <p>Choisissez votre perle rare grâce aux avis et proposez-lui un rdv</p>
+
+                            </div>
+                        </div>
+                        <div class="etape etape-3 col-6 col-md-3" style="transform: translate(0px); opacity: 1;">
+                            <a data-toggle="collapse" href="#etape_3">
+                                <div class="image"><img src="/images/2020-refonte/etape_3.jpg" alt="Je réserve mon artisan"></div>
+                                <div class="titre_etape">Payez et réservez</div>
+                                <div><i class="fa fa-caret-down"></i></div>
+                            </a>
+                            <div class="collapse" id="etape_3">
+                                <p>Payez en ligne pour réserver votre prestation. L’artisan confirmera le rendez vous dans la foulée.</p>
+
+                            </div>
+                        </div>
+                        <div class="etape etape-4 col-6 col-md-3" style="transform: translate(0px); opacity: 1;">
+                            <a data-toggle="collapse" href="#etape_4">
+                                <div class="image"><img src="/images/2020-refonte/etape_4.jpg" alt="Mes travaux sont réalisés"></div>
+                                <div class="titre_etape">Vos travaux sont nickel</div>
+                                <div><i class="fa fa-caret-down"></i></div>
+                            </a>
+                            <div class="collapse" id="etape_4">
+                                <p>La perle rare est payée quand les travaux sont bels et bien terminés.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center py-4">
+                    <h2 class="font-weight-bold text-orange text-center fz-24 md:fz-40 mb-4">Notre équipe aux petits soins</h2>
+                    <img data-original="/images/2018-refonte/equipe2019.jpg" src="/images/2018-refonte/equipe2019.jpg" class="img-fluid lazy" alt="L'équipe Meilleur-Artisan.com" style="display: inline;">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col-12 col-md-6 ">
+                                <h3 class="text-gray fz-30 ln-40x font-weight-bold text-left mt-5">Chez Meilleur Artisan, on est passionné et on vous chouchoute.</h3>
+                            </div>
+                            <div class="col-12 col-md-6 p-5">
+                                <p class="text-left fz-15 pr-5">On est sur la brèche pour vous accompagner et <b>vous assurer des travaux au cordeau</b>.<br>
+                                    Vous ne savez plus où vous habitez ? Retrouvez dans notre blog actu <a class="text-orange" href="#" title="Visiter le blog actu">toutes nos <b>astuces travaux</b></a>.</p>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-orange rounded-pill py-3 px-4">+ d'infos sur l'équipe <i class="fa fa-caret-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="bg-gray py-4">
+                    <div class="container trouver_prestation">
+                        <h2 class="titre text-orange text-center font-weight-bold fz-24 md:fz-40 mb-4">Trouvez la perle rare </h2>
+                        <div class="row prestations">
+                            <div class="col-6 col-md-4 mt-3 py-md-4 px-md-5">
+                                <a href="#" class="d-block text-center">
+                                    <img src="/images/2020-refonte/prestation_electricien-min.jpg" class="img-fluid rounded-circle" alt="Trouver mon électricien ?">
+                                    <span class="mt-3 btn bg-white btn-outline-orange rounded-pill font-weight-bold fz-14 px-3 py-2">Besoin d'un électricien ?</span>
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mt-3 py-md-4 px-md-5">
+                                <a href="#" class="d-block text-center">
+                                    <img src="/images/2020-refonte/prestation_serrurier-min.jpeg" class="img-fluid  rounded-circle" alt="Dénicher un serrurier ?">
+                                    <span class="mt-3 btn bg-white btn-outline-orange rounded-pill font-weight-bold fz-14 px-3 py-2">Besoin d'un serrurier ?</span>
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mt-3 py-md-4 px-md-5">
+                                <a href="#" class="d-block text-center">
+                                    <img src="/images/2020-refonte/prestation_peintre-min.jpg" class="img-fluid  rounded-circle" alt="Besoin d'un peintre ?">
+                                    <span class="mt-3 btn bg-white btn-outline-orange rounded-pill font-weight-bold fz-14 px-3 py-2">Trouver un peintre ?</span>
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mt-3 py-md-4 px-md-5">
+                                <a href="#" class="d-block text-center">
+                                    <img src="/images/2020-refonte/prestation_chauffagiste-min.jpg" class="img-fluid  rounded-circle" alt="Rechercher un chauffagiste ?">
+                                    <span class="mt-3 btn bg-white btn-outline-orange rounded-pill font-weight-bold fz-14 px-3 py-2">Besoin d'un chauffagiste ?</span>
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mt-3 py-md-4 px-md-5">
+                                <a href="#" class="d-block text-center">
+                                    <img src="/images/2020-refonte/prestation_plombier-min.jpg" class="img-fluid  rounded-circle" alt="Trouver un plombier ?">
+                                    <span class="mt-3 btn bg-white btn-outline-orange rounded-pill font-weight-bold fz-14 px-3 py-2">Besoin d'un plombier ?</span>
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mt-3 py-md-4 px-md-5">
+                                <a href="#" class="d-block text-center">
+                                    <img src="/images/2020-refonte/prestation_diagnostic-min.jpeg" class="img-fluid  rounded-circle" alt="Besoin d'un diagnostic ?">
+                                    <span class="mt-3 btn bg-white btn-outline-orange rounded-pill font-weight-bold fz-14 px-3 py-2">Besoin d'un diagnostic ?</span>
+                                </a>
+                            </div>
+                        </div>
+
+
+
+                        <div class="action text-center pb-3">
+                            <a class="btn btn-orange font-weight-bold rounded-pill px-4 py-3" href="#">Voir toutes nos prestations <i class="fa fa-caret-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bandeau bandeau-2 bg-no-repeat h-auto mt-5 py-md-4 px-2 pr-md-5" style="background-image: url('./assets/bg-artisan.jpg');">
+                    <div class="bloc_texte text-white pt-2 py-md-4 pr-md-5 ln-20x md:w-1/2 ml-lg-auto">
+                        <h2 class="titre text-center font-weight-bold fz-24 md:fz-40 mb-4">Qui sont nos artisans ?</h2>
+                        <div class="texte fz-14 mb-3 ln-24x">
+                            Depuis plus de 10 ans, nous travaillons avec les <strong><a href="/france/" class="text-white">artisans du bâtiment dans la France entière</a></strong> : nous créons leur site internet. Ce sont ces
+                            <strong>professionnels qualifiés</strong>, que nous connaissons bien, avec qui nous avons tissé une
+                            <strong>relation de confiance</strong> sur le long terme, que nous vous proposons sur
+                            notre place de marché <strong>Meilleur-artisan.com</strong>.
+                        </div>
+                        <div class="texte fz-14 mb-3 ln-24x">
+                            Ils sont indépendants et qualifiés. Dans tous les cas, ils sont systématiquement <strong>vérifiés</strong>, <strong>certifiés</strong> et <strong>validés</strong> par notre équipe,
+                            pour vous apporter la <strong>qualité et la sérénité</strong> dont vous avez besoin pour les gros travaux de rénovation ou petits travaux de dépannage. Ceux qui les ont testés les ont approuvés !
+                        </div>
+                        <div class="text-center pb-4 pt-2">
+                            <button href="#" class="btn btn-orange rounded-pill font-weight-bold fz-18 px-4 py-3">Trouver mon artisan <i class="pt-1 fa fa-caret-right"></i></button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="container py-4">
+                    <h2 class="font-weight-bold text-orange text-center fz-24 md:fz-40 mt-3 mb-5">Questions fréquemment posées</h2>
+                    <div class="accordion" id="accordionFAQ" itemscope="" itemtype="https://schema.org/FAQPage">
+                        <div class="card rounded-50x border mb-4" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                            <div class="card-header bg-transparent border-transparent" id="headingzero">
+                                <h5 class="mb-0">
+                                    <button itemprop="name" class="btn bg-transparent font-weight-bold text-orange hover:text-bluegray outline-none whitespace-normal" type="button" data-toggle="collapse" data-target="#collapsezero" aria-expanded="true" aria-controls="collapsezero">
+                                        Comment trouver un bon artisan ?
+                                    </button>
+                                </h5>
+                            </div>
+
+                            <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" id="collapsezero" class="collapse" aria-labelledby="headingzero">
+                                <div class="card-body" itemprop="text">
+                                    <p class="text-gray mb-3 px-3">Plus encore que de comparer les prix, c’est la <strong>qualité de la prestation</strong>, le <strong>respect des délais</strong> de l’artisan qui importe. Pour être certain de <a href="https://www.meilleur-artisan.com">trouver le bon artisan</a>, quelques rappels de bon sens:
+                                        <br>1) Rien ne vaut <strong>bouche à oreille</strong> : interroger son réseau et les avis client sur Internet. MeilleurArtisan publie les avis de consommateurs ayant réellement été en contact avec l'artisan (suite à une demande de devis ou suite à la réalisation d'une commande).
+                                        <br>2) Pour <strong>vérifier avant</strong> vos travaux que  <strong>votre artisan</strong> existe juridiquement, c'est son <strong>numéro siret</strong> qui permet de contrôler auprès de la base infogreffe qu'une entreprise est officiellement en activité.
+                                        <br>3) Chaque professionnel est tenu d'avoir une <strong>assurance responsabilité civile</strong> pour couvrir les éventuels dommages causés lors d'une intervention.
+                                        <br>4) Pour certains <strong>corps de métier</strong> touchant à la structure du bâti, l'artisan est tenu d'avoir une <strong>assurance décennale</strong> couvrant les <strong>malfaçons</strong> durant 10 ans.
+                                        <br>5) Les <strong>labels et qualifications</strong> sont un plus, certains comme <strong>RGE</strong> permettent d'obtenir des <strong>réductions d'impôts</strong> ou <strong>crédit d'impôt</strong> mais ne garantissent pas un niveau de qualité.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card rounded-50x border mb-4" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                            <div class="card-header bg-transparent border-transparent" id="headingOne">
+                                <h5 class="mb-0">
+                                    <button itemprop="name" class="btn bg-transparent font-weight-bold text-orange hover:text-bluegray outline-none whitespace-normal" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Comment savoir si un artisan est fiable et compétent ?
+                                    </button>
+                                </h5>
+                            </div>
+
+                            <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" id="collapseOne" class="collapse " aria-labelledby="headingOne">
+                                <div class="card-body" itemprop="text">
+                                    <p class="text-gray mb-3 px-3">Tous les artisans qui proposent leur tarif sont <strong>vérifiés par notre équipe</strong>: <strong>numéro siret</strong> de l'entreprise, <strong>pièce d'identité du dirigeant</strong>, <strong>statut de l'entreprise</strong>.<br>
+                                        Si un professionnel n'honore pas une commande sans raison valable ou génère des réclamations, il est exclu de notre plateforme.
+                                        <br>Enfin, après chaque intervention, nous réalisons systématiquement une <strong>enquête qualité</strong> auprès de nos clients.
+                                        Les artisans arrivant en tête de liste sont ceux avec qui les interventions se sont très bien déroulées.<br>
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card rounded-50x border mb-4" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                            <div class="card-header bg-transparent border-transparent" id="headingTwo">
+                                <h5 class="mb-0">
+                                    <button itemprop="name" class="btn bg-transparent font-weight-bold text-orange hover:text-bluegray outline-none collapsed whitespace-normal" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Que se passe-t-il une fois que j'ai choisi mon artisan&nbsp;?
+                                    </button>
+                                </h5>
+                            </div>
+                            <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" id="collapseTwo" class="collapse" aria-labelledby="headingTwo">
+                                <div class="card-body" itemprop="text">
+                                    <p class="text-gray mb-3 px-3">Une fois que vous avez sélectionné l'artisan qui vous convient pour vos travaux, vous procédez au règlement sécurisé sur notre plateforme afin de confirmer votre commande. Votre argent est consigné jusqu’à la validation de la bonne exécution des travaux.<br> C'est une garantie pour les deux parties: si l'artisan n'intervient pas ou ne réalise pas correctement la prestation, on vous rembourse intégralement sous 48H. Si l'artisan réalise correctement la prestation, il est assuré d'être réglé.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card rounded-50x border mb-4" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                            <div class="card-header bg-transparent border-transparent" id="headingThree">
+                                <h5 class="mb-0">
+                                    <button itemprop="name" class="btn bg-transparent font-weight-bold text-orange hover:text-bluegray outline-none collapsed whitespace-normal" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Mon paiement est-il sécurisé&nbsp;?
+                                    </button>
+                                </h5>
+                            </div>
+                            <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" id="collapseThree" class="collapse" aria-labelledby="headingThree">
+                                <div class="card-body" itemprop="text">
+                                    <p class="text-gray mb-3 px-3">Conformément à la législation Européenne, la place de marché MeilleurArtisan.com intervient en tant que <strong>tiers de confiance</strong> et utilise une solution de paiement agréée. Tous les flux financiers sont traités avec le système de paiement sécurisé MangoPay (filiale de Arkéa Crédit Mutuel). Ainsi tous les transferts sont sécurisés.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card rounded-50x border mb-4" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                            <div class="card-header bg-transparent border-transparent" id="heading4">
+                                <h5 class="mb-0">
+                                    <button itemprop="name" class="btn bg-transparent font-weight-bold text-orange hover:text-bluegray outline-none collapsed whitespace-normal" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapseThree">
+                                        Que se passe t-il si je règle mais que l'artisan choisi ne peut pas venir&nbsp;?
+                                    </button>
+                                </h5>
+                            </div>
+                            <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" id="collapse4" class="collapse" aria-labelledby="heading4">
+                                <div class="card-body" itemprop="text">
+                                    <p class="text-gray mb-3 px-3">Dans ce cas, vous serez remboursé de la somme bloquée et nous vous proposerons d'autres artisans qualifiés pour réaliser vos travaux </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card rounded-50x border mb-4" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                            <div class="card-header bg-transparent border-transparent" id="heading5">
+                                <h5 class="mb-0">
+                                    <button itemprop="name" class="btn bg-transparent font-weight-bold text-orange hover:text-bluegray outline-none collapsed whitespace-normal" type="button" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapseThree">
+                                        L'artisan arrive et découvre qu'il y a plus de travaux que prévu&nbsp;?
+                                    </button>
+                                </h5>
+                            </div>
+                            <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" id="collapse5" class="collapse" aria-labelledby="heading5">
+                                <div class="card-body" itemprop="text">
+                                    <p class="text-gray mb-3 px-3">Si, à l'arrivée du professionnel, il réalise que les travaux sont plus conséquents qu’initialement prévu, l'artisan réalisera un devis complémentaire. S'il vous convient vous pouvez l'accepter sinon l'argent initialement versé vous est intégralement remboursé.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card rounded-50x border mb-4" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                            <div class="card-header bg-transparent border-transparent" id="heading6">
+                                <h5 class="mb-0">
+                                    <button itemprop="name" class="btn bg-transparent font-weight-bold text-orange hover:text-bluegray outline-none collapsed whitespace-normal" type="button" data-toggle="collapse" data-target="#collapse6" aria-expanded="false" aria-controls="collapseThree">
+                                        Et si je paye mais que l'artisan choisi ne peut pas venir&nbsp;?
+                                    </button>
+                                </h5>
+                            </div>
+                            <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" id="collapse6" class="collapse" aria-labelledby="heading6">
+                                <div class="card-body" itemprop="text">
+                                    <p class="text-gray mb-3 px-3">Dans ce cas, nous vous proposons d'autres <strong>entreprises du bâtiment qualifiées</strong> pour réaliser la prestation au même tarif. Si celles-ci ne vous conviennent pas, vous êtes remboursé de la somme réglée sous 48H.</p>     </div>
+                            </div>
+                        </div>
+                        <div class="card rounded-50x border mb-4" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                            <div class="card-header bg-transparent border-transparent" id="heading7">
+                                <h5 class="mb-0">
+                                    <button itemprop="name" class="btn bg-transparent font-weight-bold text-orange hover:text-bluegray outline-none collapsed whitespace-normal" type="button" data-toggle="collapse" data-target="#collapse7" aria-expanded="false" aria-controls="collapseThree">
+                                        Si je ne trouve pas une opération dans les packs tout compris&nbsp;?
+                                    </button>
+                                </h5>
+                            </div>
+                            <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" id="collapse7" class="collapse" aria-labelledby="heading4">
+                                <div class="card-body" itemprop="text">
+                                    <p class="text-gray mb-3 px-3">Nos packs "Tout compris" concernent des opérations courantes. Si la demande pour vos travaux est spécifique, elle nécessite alors de faire réaliser un <strong>chiffrage</strong>  et d'<strong>établir un devis</strong> précisant <strong>la fourniture</strong>, la <strong>pose</strong>, le <strong>taux horaire</strong>, les <strong>frais de déplacement</strong>, le <strong>taux de tva</strong> et <strong>la durée de validité</strong>.<br>
+                                        L'<strong>établissement du devis</strong> est généralement <strong>gratuit et sans engagement</strong> (portant alors la mention "devis gratuit") bien qu'elle peut représenter un travail important pour l'artisan.<br>
+                                        Un fois signé, le devis engage les deux parties. Il convient de bien faire préciser à <strong>votre artisan</strong> la <strong>date de démarrage</strong> et la <strong>durée des travaux</strong>.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card rounded-50x border mb-4" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                            <div class="card-header bg-transparent border-transparent" id="heading8">
+                                <h5 class="mb-0">
+                                    <button itemprop="name" class="btn bg-transparent font-weight-bold text-orange hover:text-bluegray outline-none collapsed whitespace-normal" type="button" data-toggle="collapse" data-target="#collapse8" aria-expanded="false" aria-controls="collapseThree">
+                                        Est-il possible de régler un acompte sur une prestation ?
+                                    </button>
+                                </h5>
+                            </div>
+                            <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" id="collapse8" class="collapse" aria-labelledby="heading8">
+                                <div class="card-body" itemprop="text">
+                                    <p class="text-gray mb-3 px-3">Habituellement, les artisans demandent un <strong>acompte de 30 à 50%</strong> lors de l'<strong>acceptation</strong> d'un <strong>devis de  travaux</strong>. Cet acompte est une <strong>garantie financière</strong> qui lui permet de couvrir l'achat du matériel en cas d'impayés de son client.<br>Sur notre place de marché, les devis sont réglés en totalité à la commande. La somme encaissée est stockée sur un compte séquestre. Cela donne la garantie à l'artisan d'être payé en totalité et cela donne la garantie au consommateur de récupérer l'intégralité de la somme versée si les travaux ne sont pas correctement réalisés.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray villes py-5 mb-4">
+                    <div class="container text-center">
+                        <h2 class="font-weight-bold text-orange text-center fz-24 md:fz-40 mb-4">Vos artisans par ville</h2>
+                        <div class="row">
+                            <div class="col-6 col-md-2">
+                                <a class="btn btn-orange rounded-pill d-block mx-auto whitespace-normal mw-32 py-3 fz-14 font-weight-bold mb-3 chip" href="#">Paris</a>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <a class="btn btn-gray rounded-pill d-block mx-auto whitespace-normal mw-32 py-3 fz-14 font-weight-bold mb-3 chip" href="#">Lyon</a>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <a class="btn btn-orange rounded-pill d-block mx-auto whitespace-normal mw-32 py-3 fz-14 font-weight-bold mb-3 chip" href="#">Marseille</a>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <a class="btn btn-gray rounded-pill d-block mx-auto whitespace-normal mw-32 py-3 fz-14 font-weight-bold mb-3 chip" href="#">Toulouse</a>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <a class="btn btn-orange rounded-pill d-block mx-auto whitespace-normal mw-32 py-3 fz-14 font-weight-bold mb-3 chip" href="#">Nice</a>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <a class="btn btn-gray rounded-pill d-block mx-auto whitespace-normal mw-32 py-3 fz-14 font-weight-bold mb-3 chip" href="#">Nantes</a>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <a class="btn btn-orange rounded-pill d-block mx-auto whitespace-normal mw-32 py-3 fz-14 font-weight-bold mb-3 chip" href="#">Strasbourg</a>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <a class="btn btn-gray rounded-pill d-block mx-auto whitespace-normal mw-32 py-3 fz-14 font-weight-bold mb-3 chip" href="#">Montpellier</a>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <a class="btn btn-orange rounded-pill d-block mx-auto whitespace-normal mw-32 py-3 fz-14 font-weight-bold mb-3 chip" href="#">Bordeaux</a>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <a class="btn btn-gray rounded-pill d-block mx-auto whitespace-normal mw-32 py-3 fz-14 font-weight-bold mb-3 chip" href="#">Lille</a>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <a class="btn btn-orange rounded-pill d-block mx-auto whitespace-normal mw-32 py-3 fz-14 font-weight-bold mb-3 chip" href="#">St Etienne</a>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <a class="btn btn-gray rounded-pill d-block mx-auto whitespace-normal mw-32 py-3 fz-14 font-weight-bold mb-3 chip" href="#">Rennes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="text-center px-5 py-4">
+                        <h2 class="font-weight-bold text-orange text-center fz-24 md:fz-40 mb-4">Pour vous simplifier la vie, on s'engage !</h2>
+                        <div class="row engagements animated pt-3">
+                            <div class="etape etape-1 col-12 col-md-3" style="transform: translate(0px); opacity: 1;">
+                                <div class="image"><img class="h-100 w-auto" src="/images/2020-refonte/engagement_1.jpg" alt="Trouver un artisan : Assistance pour votre devis de travaux"></div>
+                                <div class="titre_etape">Une équipe impliquée<br>dans vos travaux</div>
+                                <div><i class="fa fa-caret-down"></i></div>
+                                <p>Soyez serein, notre équipe est à votre écoute pour vous conseiller et vous accompagner !</p>
+                            </div>
+                            <div class="etape etape-2 col-12 col-md-3" style="transform: translate(0px); opacity: 1;">
+                                <div class="image"><img class="h-100 w-auto" src="/images/2020-refonte/engagement_2.jpg" alt="Trouver un artisan : Informations fiables et vérifiées"></div>
+                                <div class="titre_etape">De vrais pros<br>super pros</div>
+                                <div><i class="fa fa-caret-down"></i></div>
+                                <p>Toutes les informations sont vérifiées par l'équipe : Siret, téléphone, mail, qualification</p>
+                            </div>
+                            <div class="etape etape-3 col-12 col-md-3" style="transform: translate(0px); opacity: 1;">
+                                <div class="image"><img class="h-100 w-auto" src="/images/2020-refonte/engagement_3.jpg" alt="Trouver un artisan grâce aux Avis clients après travaux"></div>
+                                <div class="titre_etape">De vrais avis clients<br>100% fiables</div>
+                                <div><i class="fa fa-caret-down"></i></div>
+                                <p>Tous les avis que vous consultez sont certifiés AFNOR, norme internationale</p>
+                            </div>
+                            <div class="etape etape-4 col-12 col-md-3" style="transform: translate(0px); opacity: 1;">
+                                <div class="image"><img class="h-100 w-auto" src="/images/2020-refonte/engagement_4.jpg" alt="Paiement après la fin des travaux"></div>
+                                <div class="titre_etape">Un paiement <br>versé après travaux</div>
+                                <div><i class="fa fa-caret-down"></i></div>
+                                <p>Le professionnel est réglé quand le chantier est terminé. Aucun risque de voir votre acompte s'envoler</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bandeau bandeau-3 bg-no-repeat lg:hm-32x4 h-auto flex position-relative text-white p-4" style="background-image: url('./assets/histoire.jpg');">
+                    <div class="bloc_texte lg:w-1/2 mr-lg-5 px-lg-5 pt-4 ml-auto">
+                        <h2 class="titre font-weight-bold text-left text-lg-center mb-4 fz-24 md:fz-40">Notre histoire depuis 2007</h2>
+                        <div class="texte small my-3 ln-24x">
+                            <strong>Il était une fois...</strong><br>
+                            ... l'idée folle et farfelue de créer une start-up Internet dans un territoire coupé du monde, à Gap
+                            au coeur des Hautes-Alpes. Pas d'autoroute, pas de TGV et quelques marmottes en été.
+                        </div>
+                        <div class="texte small my-3 ln-24x">
+                            <strong>L'idée</strong> : simplifier la relation entre <strong>artisans</strong> et <strong>consommateurs</strong> grâce à Internet.
+                            Constatant que la <strong>recherche d'un bon artisan</strong> pour faire des travaux est anxiogène pour les particuliers, nous proposons la
+                            possibilité de <strong>commander en ligne son artisan</strong> après avoir comparé les prix et les avis des consommateurs.
+                        </div>
+                        <div class="texte small my-3 ln-24x">
+                            Nous connaissons la <strong>qualité des prestations des artisans</strong> de notre réseau. C'est notre différence,
+                            et c'est cette qualité que nous apportons aux particuliers, <strong>pour que chacun puisse trouver et commander son artisan en toute confiance, et même sans passer par la
+                            case devis !</strong>
+                        </div>
+                        <div class="texte small my-3 ln-24x">
+                            <strong>Nos valeurs : simplicité, intégrité, et sens du service, portés par une équipe à taille humaine.</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="container pt-4 pb-3">
+                    <h2 class="text-center text-orange font-weight-bold mb-4 md:fz-40">On parle de nous</h2>
+                    <a class="row" href="#">
+                        <div class="col">
+                            <img data-original="assets/partenaire.jpg" src="assets/partenaire.jpg" class="img-fluid lazy" alt="Meilleurartisan.com soutenu par IRCE" style="display: inline;">
+                        </div>
+                        <div class="col">
+                            <img data-original="assets/partenaire.jpg" src="assets/partenaire.jpg" class="img-fluid lazy" alt="Meilleurartisan.com dans le Dauphiné" style="display: inline;">
+                        </div>
+                        <div class="col">
+                            <img data-original="assets/partenaire.jpg" src="assets/partenaire.jpg" class="img-fluid lazy" alt="Meilleurartisan.com partenaire de l'université de Provence" style="display: inline;">
+                        </div>
+                        <!-- Force next columns to break to new line at md breakpoint and up -->
+                        <div class="w-100 d-block d-sm-none"></div>
+                        <div class="col">
+                            <img data-original="assets/partenaire.jpg" src="assets/partenaire.jpg" class="img-fluid lazy" alt="Meilleurartisan.com sur DICI TV" style="display: inline;">
+                        </div>
+                        <div class="col">
+                            <img data-original="assets/partenaire.jpg" src="assets/partenaire.jpg" class="img-fluid lazy" alt="Meilleurartisan.com sélectionné par la FrenchTech" style="display: inline;">
+                        </div>
+                        <div class="col">
+                            <img data-original="assets/partenaire.jpg" src="assets/partenaire.jpg" class="img-fluid lazy" alt="Meilleurartisan.com partenaire de Google" style="display: inline;">
+                        </div>
+                        <!-- Force next columns to break to new line at md breakpoint and up -->
+                        <div class="w-100 d-block d-sm-none"></div>
+                        <div class="col">
+                            <img data-original="assets/partenaire.jpg" src="assets/partenaire.jpg" class="img-fluid lazy" alt="Meilleurartisan.com à Vivatechnology" style="display: inline;">
+                        </div>
+                        <div class="col">
+                            <img data-original="assets/partenaire.jpg" src="assets/partenaire.jpg" class="img-fluid lazy" alt="Meilleurartisan.com sur Femme Actuelle" style="display: inline;">
+                        </div>
+                    </a>
+
+                </div>
+                <div class="pt-3 p-5 mt-5" style="background: url('assets/bg.jpg');">
+                    <div class="container pb-3 text-center text-white">
+                        <h2 class="text-orange fz-24 md:fz-40 font-weight-bold my-4">Professionnel du bâtiment ?</h2>
+                        <div class="nombre fz-60 font-weight-bold">29000</div>
+                        <p class="mt-n3 small">professionnels du bâtiment nous ont déjà rejoints !</p>
+                        <div class="text-orange fz-20 font-weight-bold mt-n2">Pourquoi pas vous ?</div>
+                        <p class="mt-2 small">
+                            propose de nombreux services à disposition des professionnels<br>
+                            pour les aider à développer leur chiffre d'affaires et trouver des chantiers.
+                        </p>
+                        <a href="#" class="btn btn-orange rounded-pill font-weight px-4 py-3">Découvrez nos services <i class="fa fa-caret-right"></i></a>
+                    </div>
+                </div>
+                <div class="flex px-3 text-center py-3">
+                    <img data-original="asset/paiement.png" src="assets/paiement.png" alt="Paiement des travaux sécurisé" class="img-fluid lazy" style="display: inline;">
+                </div>
             </div>
-        </div>
-        <div class="flex px-3 text-center py-3">
-            <img data-original="asset/paiement.png" src="assets/paiement.png" alt="Paiement des travaux sécurisé" class="img-fluid lazy" style="display: inline;">
         </div>
     </main>
 
-    <footer class="bg-gray-900 hover:link-orange pt-3 pt-md-5 pb-2 pb-md-3">
-        <div class="container">
+    <footer class="bg-gray-900 hover:link-orange pt-3 pt-md-4 pb-2 pb-md-3">
+        <div class="container pt-md-3">
             <div class="row xs:space-y-2 md:space-x-5">
                 <div class="col-12 col-md-3">
                     <form action="" method="post">
@@ -500,17 +1020,17 @@
             </div>
         </div>
     </footer>
-    
-    <div id="cookies" class="bg-gray fixed-bottom p-2 small text-center ln-16">
+
+    <div id="cookies" class="bg-gray d-none fixed-bottom p-2 small text-center ln-16">
         <span>
             COVID-19 : la santé est notre priorité. Nous avons renforcé nos communications auprès de nos professionnels pour adopter les gestes barrières. Dans le cas d’un rendez-vous à votre domicile, nous vous recommandons également de respecter ces mesures pour votre santé, celle de l’artisan, et pour contenir la propagation du virus. En naviguant sur notre site, vous acceptez l’utilisation de cookies pour nous permettre de mesurer l’audience et de vous offrir une meilleure expérience de navigation, des services (partages sociaux…) et contenus adaptés. 
         </span>
         <a href="#" class="ml-1 text-orange font-weight break-word" target="_blank">En savoir plus.</a>
         <a href="#" class="ml-1 text-orange font-weight break-word" target="_blank">Gérez votre consentement sur les cookies.</a>
-        <button class="btn btn-orange hover:bg-orange-100 hover:text-white ml-1 mt-1 d-inline-block px-2 py-1">Fermer</button>
+        <button id="cookiesClose" class="btn btn-orange hover:bg-orange-100 hover:text-white ml-1 mt-1 d-inline-block px-2 py-1">Fermer</button>
     </div>
 
-    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/all.min.js"></script>
